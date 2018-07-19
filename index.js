@@ -10,12 +10,27 @@ console.log("Bonne chance! Good luck! Alles Gute!");
 console.log("-----------------------------");
 prompt.start();
 
-prompt.get([{
-  name: 'letter',
-  description: 'What letter would you like to guess?',  
-  type: 'string',
-  required: true
-}], function (err, result) {
-  console.log('userGuess: ' + result.letter);
-});
+
+function newGame(){
+  var randomWord = new Word(wordList[Math.floor(Math.random() * wordList.length)])
+  randomWord.print();
+  prompt.get([{
+    name: 'letter',
+    description: 'What letter would you like to guess?',  
+    type: 'string',
+    pattern: /^[a-zA-z]+$/,
+    message: 'Guess must be a letter',
+    required: true
+  }], function (error, result) {
+    if (!error){
+      randomWord.testLetter(result.letter)
+    }else{
+      console.log("There was an error...")
+    }
+  });
+  
+  
+}
+
+newGame();
 

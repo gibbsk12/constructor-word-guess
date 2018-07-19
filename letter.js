@@ -7,6 +7,11 @@ var Letter = function(userLetter){
         } else {
             return " _ "
         }
-    }
-}
-exports.Letter = Letter;
+    };
+    this.checkLetter = function(x){
+        if (this.Letter==x){
+            this.shown = true; 
+        }
+    };
+};
+module.exports = Letter;
