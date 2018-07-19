@@ -12,7 +12,7 @@ var Word = function (word) {
         this.displayArray = [];
         for (var i = 0; i < this.objectArray.length; i++) {
             this.displayArray.push(this.objectArray[i].displayLetter())
-            if (this.arr[j].displayLetter() == "_") {
+            if (this.objectArray[i].displayLetter() == "_") {
                 this.underscores++;
             }
         }
