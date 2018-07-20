@@ -1,4 +1,5 @@
 var Letter = require("./letter");
+var colors = require("colors");
 
 
 var Word = function (word) {
@@ -33,14 +34,14 @@ var Word = function (word) {
         };
         if (found === false) {
             this.guessesRemaining--;
-            console.log(`INCORRECT\n`)
+            console.log(`\nINCORRECT\n`.red)
         } else if (found === true) {
-            console.log(`CORRECT\n`)
+            console.log(`\nCORRECT\n`.green)
         }
     };
     this.noUnderscore = function () {
         if (this.displayArray.every(this.didYouWin)) {
-            console.log(`YOU'VE WON`);
+            console.log(`YOU'VE WON`.green);
         } else {
             if (this.guessesRemaining > 0) {
             console.log(`Guess again!`);
