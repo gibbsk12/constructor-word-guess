@@ -1,7 +1,6 @@
 var Letter = require("./letter");
 var colors = require("colors");
 
-
 var Word = function (word) {
     this.objectArray = [];
     this.displayArray = [];
