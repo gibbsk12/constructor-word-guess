@@ -4,7 +4,7 @@ var Letter = function (x) {
     this.displayLetter = function () {
         switch (this.hasBeenGuessed) {
             case true:
-                return this.letter;
+                return this.letter.toUpperCase();
             case false:
                 return '_';
         }
