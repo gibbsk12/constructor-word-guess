@@ -1,4 +1,4 @@
-var Letter = require('./letter');
+var Letter = require("./letter");
 
 
 var Word = function (word) {
@@ -14,7 +14,7 @@ var Word = function (word) {
         this.underscores = 0;
         for (var i = 0; i < this.objectArray.length; i++) {
             this.displayArray.push(this.objectArray[i].displayLetter());
-            if (this.objectArray[i].displayLetter() == '_') {
+            if (this.objectArray[i].displayLetter() == "_") {
                 this.underscores++;
             }
         }
@@ -33,9 +33,9 @@ var Word = function (word) {
         };
         if (found === false) {
             this.guessesRemaining--;
-            console.log('INCORRECT')
+            console.log(`INCORRECT\n`)
         } else if (found === true) {
-            console.log(`CORRECT`)
+            console.log(`CORRECT\n`)
         }
     };
     this.noUnderscore = function () {
@@ -43,7 +43,7 @@ var Word = function (word) {
             console.log(`YOU'VE WON`);
         } else {
             if (this.guessesRemaining > 0) {
-            console.log('Guess again!');
+            console.log(`Guess again!`);
             } 
         }
     };
