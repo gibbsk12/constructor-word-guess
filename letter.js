@@ -1,17 +1,19 @@
-var Letter = function(userLetter){
-    this.character = userLetter;
-    this.shown = false; 
-    this.displayLetter = function(){
-        if (this.shown === true){
-            return this.character;
-        } else {
-            return " _ "
+var Letter = function (x) {
+    this.letter = x;
+    this.hasBeenGuessed = false;
+    this.displayLetter = function () {
+        switch (this.hasBeenGuessed) {
+            case true:
+                return this.letter;
+            case false:
+                return '_';
         }
     };
-    this.checkLetter = function(x){
-        if (this.Letter==x){
-            this.shown = true; 
+    this.checkLetter = function (x) {
+        if (x == this.letter) {
+            this.hasBeenGuessed = true;
         }
-    };
-};
+    }
+}
+
 module.exports = Letter;
