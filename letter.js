@@ -2,11 +2,10 @@ var Letter = function (x) {
     this.letter = x;
     this.hasBeenGuessed = false;
     this.displayLetter = function () {
-        switch (this.hasBeenGuessed) {
-            case true:
-                return this.letter.toUpperCase();
-            case false:
-                return '_';
+        if (this.hasBeenGuessed === true){
+            return this.letter.toUpperCase();
+        }else if (this.hasBeenGuessed === false){
+            return '_';
         }
     };
     this.checkLetter = function (x) {
