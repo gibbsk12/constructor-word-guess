@@ -3,7 +3,6 @@ var colors = require("colors");
 
 var Word = function (word) {
     this.objectArray = [];
-    this.displayArray = [];
     this.underscores = 0;
     this.guessesRemaining = 10;
     for (var i = 0; i < word.length; i++) {
@@ -47,7 +46,7 @@ var Word = function (word) {
             } 
         }
     };
-    this.didYouWin = function (letter, index, array) {
+    this.didYouWin = function (letter) {
         return letter != "_";
     };
 }
